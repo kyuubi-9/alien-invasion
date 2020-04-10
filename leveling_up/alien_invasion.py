@@ -2,6 +2,7 @@ import sys
 from time import sleep
 
 import pygame
+from pygame import mixer
 
 from settings import Settings
 from game_stats import GameStats
@@ -32,6 +33,7 @@ class AlienInvasion:
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+        self.bullet_sound = mixer.music.load ('sound/laser.ogg')
         self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
@@ -99,6 +101,7 @@ class AlienInvasion:
         elif event.key == pygame.K_q:
             sys.exit()
         elif event.key == pygame.K_SPACE:
+            self.bullet_sound.play()
             self._fire_bullet()
 
     def _check_keyup_events(self, event):

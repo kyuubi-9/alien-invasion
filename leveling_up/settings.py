@@ -18,7 +18,7 @@ class Settings:
         self.bullets_allowed = 3
 
         # Alien settings
-        self.fleet_drop_speed = 10
+        self.fleet_drop_speed = 30
 
         # How quickly the game speeds up
         self.speedup_scale = 1.1
@@ -33,6 +33,7 @@ class Settings:
 
         # fleet_direction of 1 represents right; -1 represents left.
         self.fleet_direction = 1
+        self.alien_points = 50
 
     def increase_speed(self):
         """Increase speed settings."""
